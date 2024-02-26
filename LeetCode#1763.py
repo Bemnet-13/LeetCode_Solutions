@@ -4,7 +4,7 @@ class Solution:
         # Find the set of all appearances of the letters used in the string
         # Use sliding window to 
         # Decrease the window size and check every possible substring  
-        # If it is nuce, return the string
+        # If it is nice, return the string
         # if not continuously decrease it until it is zero
 
         window_size = len(s)
