@@ -1,3 +1,4 @@
+# Answer v--1.0 
 class Solution:
     def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
         # define maximum and count variables t be 0
@@ -7,6 +8,7 @@ class Solution:
         # if it is equal then increment both vals by 1
         # if not decrease both vals by 1 and k by 1 ---until k evals to 0
         # if k == 0 then maximum = max(maximum, count)
+        # Answer v--1.0 
         ops = k
         maximum = 0
         for i in range(len(answerKey)):
