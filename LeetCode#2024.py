@@ -4,8 +4,8 @@ class Solution:
         # Define a function that takes in  the answerKey, the opposing answer,
         # the coverted answer and k
         # return the maximum of the two situation
-
-        return max(self.maxConsectutiveWith(answerKey, k, 'T', 'F'), self.maxConsectutiveWith(answerKey, k, 'F', 'T'))
+        return max(self.maxConsectutiveWith(answerKey, k, 'T', 'F'),
+                    self.maxConsectutiveWith(answerKey, k, 'F', 'T'))
     
     def maxConsectutiveWith(self, answerKey, k, corr, opp):
         start = end = max_len = 0
