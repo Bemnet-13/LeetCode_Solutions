@@ -47,6 +47,5 @@ class Solution:
                 end += 1
         return count
 trial =Solution()
-o = trial.niceSubarrays(nums = [2,4,6], k = 1
-)
+o = trial.niceSubarrays(nums = [1,1,2,1,1], k = 3)
 print(o)
