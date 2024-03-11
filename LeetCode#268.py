@@ -1,11 +1,17 @@
 class Solution:
     def missingNumber(self, nums) -> int:
         i = 0
-        new = [-1] * (len(nums) + 1) 
-        for num in nums:
-            new[num] = num
-        for i in range(len(new)):
-            if new[i] == -1:
+        while i < len(nums):
+            corr = nums[i]
+
+            if i == corr or corr > len(nums) - 1:
+                i += 1
+            else:
+                nums[corr], nums[i] = nums[i], nums[corr]
+        
+        for i in range(len(nums)):
+            if i != nums[i]:
                 return i
+        return len(nums)
 
  

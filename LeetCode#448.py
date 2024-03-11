@@ -1,14 +1,20 @@
 class Solution:
-    def findDisappearedNumbers(self, nums):
-        sorted_nums = [-1] * len(nums)
-
-        for num in nums:
-            sorted_nums[num-1] = num
-        
+    def findDisappearedNumbers(self, nums): 
         result = []
+        i = 0
 
-        for i in range(len(sorted_nums)):
-            if sorted_nums[i] == i + 1:
+        while i < len(nums):
+            idx = nums[i] - 1
+            if i == nums[i] + 1:
+                i += 1
+            else:
+                nums[i], nums[idx] = nums[idx], nums[i]
+        
+        for i in range(len(nums)):
+            if i != nums[i] - 1:
                 result.append(i + 1)
-
         return result
+    
+trial = Solution()
+o = trial.findDisappearedNumbers([4,3,2,7,8,2,3,1])
+print(o)
