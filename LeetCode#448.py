@@ -1,19 +1,18 @@
 class Solution:
     def findDisappearedNumbers(self, nums): 
-        result = []
         i = 0
-
         while i < len(nums):
-            idx = nums[i] - 1
-            if i == nums[i] + 1:
+            corr = nums[i] - 1
+            if i == corr or nums[corr] == nums[i]:
                 i += 1
             else:
-                nums[i], nums[idx] = nums[idx], nums[i]
-        
+                nums[corr], nums[i] = nums[i], nums[corr]
+
+        res = []
         for i in range(len(nums)):
-            if i != nums[i] - 1:
-                result.append(i + 1)
-        return result
+           if i != nums[i] - 1:
+               res.append(i + 1)
+        return res
     
 trial = Solution()
 o = trial.findDisappearedNumbers([4,3,2,7,8,2,3,1])
